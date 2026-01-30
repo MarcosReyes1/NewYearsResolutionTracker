@@ -1,0 +1,33 @@
+<!-- section.component.html -->
+<div class="resolution-card">
+  <div class="resolution-header">
+    <h3>{{ resolution.title }}</h3>
+    <button class="delete-btn" (click)="delete()">×</button>
+  </div>
+  
+  <p class="description">{{ resolution.description }}</p>
+  
+  <div class="category" *ngIf="resolution.category">
+    {{ resolution.category }}
+  </div>
+  
+  <div class="progress-section">
+    <div class="progress-bar">
+      <div class="progress-fill" [style.width.%]="getProgressPercentage()"></div>
+    </div>
+    
+    <div class="progress-text">
+      {{ resolution.currentProgress }} / {{ resolution.targetProgress }}
+      <!-- ({{ getProgressPercentage() | number:'1.0-0' }}%) -->
+    </div>
+  </div>
+  
+  <div class="controls">
+    <button (click)="decrease()" [disabled]="resolution.currentProgress === 0">
+      −
+    </button>
+    <button (click)="increase()" [disabled]="resolution.currentProgress >= resolution.targetProgress">
+      +
+    </button>
+  </div>
+</div>

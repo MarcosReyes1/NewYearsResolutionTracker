@@ -1,0 +1,13 @@
+<!-- home.component.html -->
+<div class="resolutions-container">
+  <h1>My 2025 New Year Resolutions</h1>
+  
+  <div class="resolutions-grid">
+    <app-section 
+      *ngFor="let resolution of resolutions"
+      [resolution]="resolution"
+      (progressChanged)="onProgressChange($event.id, $event.progress)"
+      (deleteRequested)="deleteResolution($event)">
+    </app-section>
+  </div>
+</div>
