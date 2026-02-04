@@ -30,6 +30,7 @@
           },
           "configurations": {
             "production": {
+              "baseHref": "/NewYearsResolutionTracker/",
               "budgets": [
                 {
                   "type": "initial",
