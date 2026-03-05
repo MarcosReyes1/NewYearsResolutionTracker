@@ -6,4 +6,5 @@ export interface Resolution {
     targetProgress: number;
     category?: string;
     createdDate: Date;
+    test: string;
 }
